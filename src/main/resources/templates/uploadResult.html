@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">  
+<head>      
+    <meta charset="UTF-8">
+    <title>Upload Result</title>   
+</head>
+<body>
+<div style="border:1px solid #ccc;padding:5px;">  
+       <a th:href="@{/uploadOneFile}">Upload One File</a>    
+       &nbsp;|&nbsp;    
+       <a th:href="@{/uploadMultiFile}">Upload Multi File</a>
+</div>
+       
+      Description: <span th:utext="${description}"></span>
+      <br/>
+      <h3>Uploaded Files:</h3>      
+<ul th:each="file : ${uploadFiles}">         
+    <li th:utext="${file}"></li>        
+</ul>
+      <h3>Failed:</h3>      
+<ul th:each="file : ${failedFiles}">         
+    <li style="color:red;" th:utext="${file}"></li>
+          
+</ul>
+  <img th:src="@{/resources/a.png}">
+</body>
+    
+</html>
